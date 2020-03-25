@@ -16,14 +16,15 @@ require('dotenv').config();
 
 
     // Wait for the results page to load and display the results.
-    const resultsSelector = 'tr[data-date_start|="2020"]';
+    //tr[data-date_start|="2020"]
+    const resultsSelector = 'tbody';
     await page.waitForSelector(resultsSelector);
 
     // Extract the results from the page.
     const audits = await page.evaluate(resultsSelector => {
         const names = Array.from(document.querySelectorAll(resultsSelector));
         return names.map(name => {
-            return name.innerText;
+            return name.innerHTML;
         });
     }, resultsSelector);
     console.log(audits);

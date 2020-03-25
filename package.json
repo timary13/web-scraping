@@ -5,12 +5,14 @@
   "main": "src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "scraping": "node src/index.js"
+    "scraping": "node src/index.js",
+    "bot": "node src/bot.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "dotenv": "^8.2.0",
+    "node-telegram-bot-api": "^0.40.0",
     "puppeteer": "^2.1.1"
   }
 }
